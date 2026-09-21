@@ -1,0 +1,325 @@
+/* ==========================================================================
+   1. CORE VARIABLES & BASE RESET
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-dark-deep: #0a0a0b;        
+    --bg-dark-card: #121214;        
+    --color-gold: #d4af37;          
+    --color-gold-hover: #bfa030;    
+    --text-main: #ffffff;           
+    --text-muted: #a0a0a5;          
+    --color-bar-dark: #161619;      
+    --font-sans: 'Inter', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-dark-deep);
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--text-main);
+    background-color: var(--bg-dark-deep);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   2. NAVBAR ATAS & HAMBURGER SYSTEM
+   ========================================================================== */
+.top-nav {
+    width: 100%;
+    background-color: #0a0a0b;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;    
+    gap: 10px;              
+    text-decoration: none;  
+}
+
+.main-logo {
+    height: 40px;           
+    width: 40px;            
+    border-radius: 50%;     
+    border: 1px solid var(--color-gold);
+}
+
+.logo-text {
+    font-size: 0.95rem;     
+    font-weight: 700;       
+    letter-spacing: 1.5px;  
+    color: var(--text-main);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--color-gold);
+}
+
+.nav-links .btn-nav-accent {
+    background-color: var(--color-gold);
+    color: #000000;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 22px;
+    height: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-main);
+    transition: 0.3s;
+}
+
+/* ==========================================================================
+   3. HERO SECTION (LOCK HORIZONTAL)
+   ========================================================================== */
+.hero-section {
+    padding: 80px 0;
+    min-height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; 
+    gap: 40px;
+    align-items: center;
+    width: 100%;
+}
+
+.hero-left {
+    text-align: left;
+}
+
+.hero-subtitle {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.hero-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.hero-desc {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    max-width: 520px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-primary {
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background-color: var(--color-gold);
+    color: #000000;
+    padding: 12px 24px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.btn-text-link {
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-main);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 12px 24px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.hero-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-image-wrapper {
+    width: 100%;
+    max-width: 350px;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;   
+    border-radius: 50%;
+    border: 4px solid #191919;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
+}
+
+.hero-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ==========================================================================
+   4. MARQUEE & KONTEN BAWAH (ABOUT ME SEKARANG DI ATAS PORTOFOLIO)
+   ========================================================================== */
+.logo-bar { 
+    background-color: var(--color-bar-dark); 
+    padding: 15px 0; 
+    overflow: hidden; 
+    border-top: 1px solid rgba(255,255,255,0.05); 
+    border-bottom: 1px solid rgba(255,255,255,0.05); 
+}
+
+.logo-bar-track { display: flex; width: max-content; gap: 40px; animation: jalanKiriMulus 20s linear infinite; }
+.logo-item { font-size: 0.75rem; font-weight: 600; letter-spacing: 1.5px; }
+.logo-item span { color: var(--color-gold); }
+
+.about-section { 
+    padding: 80px 0; 
+    background-color: var(--bg-dark-card); /* Kontras abu-abu gelap setelah hero hitam */
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+.portfolio-section { 
+    padding: 80px 0; 
+    background-color: var(--bg-dark-deep); /* Kembali ke hitam pekat */
+}
+
+.wrapper { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.section-tag { font-size: 0.75rem; letter-spacing: 2px; color: var(--color-gold); font-weight: 700; display: block; margin-bottom: 8px; }
+.section-title, .about-main-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 30px; }
+
+/* GANTI ATAU TAMBAHKAN KODE INI DI CSS */
+.portfolio-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* KUNCI: Membuat 2 kolom menyamping (Laptop) */
+    gap: 30px; /* Jarak antar card */
+}
+.card-project { background-color: var(--bg-dark-card); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.02); }
+.card-img-box { width: 100%; aspect-ratio: 4 / 3; }
+.card-img-box img { width: 100%; height: 100%; object-fit: cover; }
+.card-info { padding: 20px; }
+.card-info h3 { font-size: 1.1rem; margin-bottom: 5px; }
+.card-info p { font-size: 0.8rem; color: var(--color-gold); }
+
+.about-grid { display: grid; grid-template-columns: 0.6fr 1.4fr; gap: 40px; }
+.about-right .about-opening { font-size: 1.4rem; color: var(--color-gold); margin-bottom: 15px; font-weight: 700; }
+.about-text { font-size: 1rem; line-height: 1.8; color: var(--text-muted); }
+
+/* ==========================================================================
+   5. RESPONSIVE MOBILE FIX
+   ========================================================================== */
+@media (max-width: 768px) {
+    .menu-toggle { display: flex; }
+
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #121214;
+        padding: 20px;
+        gap: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-links.active { display: flex; }
+
+    .hero-section {
+        padding: 40px 0 60px 0 !important;
+        min-height: auto !important; 
+    }
+
+    .hero-container {
+        grid-template-columns: 1.2fr 0.8fr !important; 
+        gap: 15px;
+        padding: 0 15px;
+    }
+
+    .hero-title { font-size: 1.25rem !important; margin-bottom: 6px; }
+    .hero-desc { font-size: 0.65rem !important; line-height: 1.4; margin-bottom: 12px; }
+    .btn-primary, .btn-text-link { padding: 7px 12px !important; font-size: 0.65rem !important; }
+    .hero-image-wrapper { max-width: 130px !important; border-width: 2px; }
+
+    .portfolio-grid-4 {
+        grid-template-columns: repeat(2, 1fr) !important; 
+        gap: 15px !important; /* Jarak di HP agak dirapatkan biar rapi */
+    }
+
+    /* Perkecil teks info di dalam card agar muat di layar HP */
+    .card-info h3 {
+        font-size: 0.85rem !important;
+    }
+    .card-info p {
+        font-size: 0.65rem !important;
+    }
+    .card-info {
+        padding: 12px !important;
+    }
+
+    .section-title, .about-main-title { font-size: 1.6rem !important; margin-bottom: 20px; }
+}
+
+@keyframes jalanKiriMulus {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
